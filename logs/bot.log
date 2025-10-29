@@ -1,0 +1,507 @@
+2025-10-28 08:43:03 | INFO     | root | Logging configured
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | ==================================================
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | ==================================================
+2025-10-28 08:43:03 | INFO     | EMCBot | Loaded configuration from ./discadian/config.yaml
+2025-10-28 08:43:03 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | Config loaded from: /home/container/config.yaml
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | Token length: 72
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-28 08:43:03 | ERROR    | EMCBot.Main | Please set your bot token in config.yaml!
+2025-10-28 08:43:03 | INFO     | EMCBot | Shutting down bot...
+2025-10-28 08:43:03 | INFO     | EMCBot | Bot shut down complete
+2025-10-28 08:43:03 | INFO     | EMCBot.Main | Bot shut down
+2025-10-29 05:40:17 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:40:17 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:40:17 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:40:17 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:40:17 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:40:17 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:40:17 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:40:17 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:40:17 | INFO     | EMCBot | API client initialized
+2025-10-29 05:40:17 | ERROR    | EMCBot | Failed to load cog cogs.verification: cannot import name 'is_main_nation' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:40:17 | ERROR    | EMCBot | Failed to load cog cogs.admin: cannot import name 'is_main_nation' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:40:17 | ERROR    | EMCBot | Failed to load cog cogs.auto_verify: cannot import name 'is_main_nation' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:40:17 | ERROR    | EMCBot | Failed to load cog cogs.scanner: cannot import name 'is_main_nation' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:40:17 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:40:20 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:40:20 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:40:20 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:42:17 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:42:17 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:42:17 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:42:17 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:42:17 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:42:17 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:42:17 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:42:17 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:42:17 | INFO     | EMCBot | API client initialized
+2025-10-29 05:42:17 | ERROR    | EMCBot | Failed to load cog cogs.verification: cannot import name 'create_purge_confirmation_embed' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:42:17 | ERROR    | EMCBot | Failed to load cog cogs.admin: cannot import name 'create_purge_confirmation_embed' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:42:17 | ERROR    | EMCBot | Failed to load cog cogs.auto_verify: cannot import name 'create_purge_confirmation_embed' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:42:17 | ERROR    | EMCBot | Failed to load cog cogs.scanner: cannot import name 'create_purge_confirmation_embed' from 'utils' (/home/container/discadian/utils/__init__.py)
+2025-10-29 05:42:17 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:42:20 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:42:20 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:42:20 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:43:39 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:43:39 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:43:39 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:43:39 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:43:39 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:43:39 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:43:39 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:43:39 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:43:39 | INFO     | EMCBot | API client initialized
+2025-10-29 05:43:39 | ERROR    | EMCBot | Failed to load cog cogs.verification: cannot import name 'create_purge_confirmation_embed' from 'utils.helpers' (/home/container/discadian/utils/helpers.py)
+2025-10-29 05:43:39 | ERROR    | EMCBot | Failed to load cog cogs.admin: cannot import name 'create_purge_confirmation_embed' from 'utils.helpers' (/home/container/discadian/utils/helpers.py)
+2025-10-29 05:43:39 | ERROR    | EMCBot | Failed to load cog cogs.auto_verify: cannot import name 'create_purge_confirmation_embed' from 'utils.helpers' (/home/container/discadian/utils/helpers.py)
+2025-10-29 05:43:39 | ERROR    | EMCBot | Failed to load cog cogs.scanner: cannot import name 'create_purge_confirmation_embed' from 'utils.helpers' (/home/container/discadian/utils/helpers.py)
+2025-10-29 05:43:39 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:43:41 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:43:41 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:43:41 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:46:47 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:46:47 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:46:47 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:46:47 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:46:47 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:46:47 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:46:47 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:46:48 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:46:48 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:46:48 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:46:48 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:46:48 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:46:48 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:46:48 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:46:48 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:46:48 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:46:48 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:46:48 | INFO     | EMCBot | API client initialized
+2025-10-29 05:46:48 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 05:46:48 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 05:46:48 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 05:46:48 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 05:46:48 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:46:50 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 05:46:50 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 05:46:50 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:46:50 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:46:50 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:46:50 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 05:46:50 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 05:46:50 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 05:46:50 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 05:46:51 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:46:52 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:46:54 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:46:54 | WARNING  | EMCBot.Scanner | Could not find nation Cascadia
+2025-10-29 05:46:54 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.43s
+2025-10-29 05:49:27 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:49:27 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:49:27 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:49:27 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:49:27 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:49:27 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:49:27 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:49:27 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:49:27 | INFO     | EMCBot | API client initialized
+2025-10-29 05:49:27 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 05:49:27 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 05:49:27 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 05:49:27 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 05:49:28 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:49:30 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 05:49:30 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 05:49:30 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:49:30 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:49:30 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:49:30 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 05:49:30 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 05:49:30 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 05:49:30 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 05:49:30 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:49:31 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:49:33 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:49:33 | WARNING  | EMCBot.Scanner | Could not find nation Cascadia
+2025-10-29 05:49:33 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.43s
+2025-10-29 05:52:30 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:52:30 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:52:30 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:52:30 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:52:30 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:52:30 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:52:30 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:52:30 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:52:30 | INFO     | EMCBot | API client initialized
+2025-10-29 05:52:30 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 05:52:30 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 05:52:30 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 05:52:30 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 05:52:30 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:52:33 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 05:52:33 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 05:52:33 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:52:33 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:52:33 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:52:33 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 05:52:33 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 05:52:33 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 05:52:33 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 05:52:33 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:52:35 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:52:37 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations
+2025-10-29 05:52:37 | WARNING  | EMCBot.Scanner | Could not find nation Texas
+2025-10-29 05:52:37 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.79s
+2025-10-29 05:54:02 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:54:02 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:54:02 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:54:02 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:54:03 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:54:03 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:54:03 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:54:03 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:54:03 | INFO     | EMCBot | API client initialized
+2025-10-29 05:54:03 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 05:54:03 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 05:54:03 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 05:54:03 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 05:54:03 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:54:05 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 05:54:05 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 05:54:05 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:54:05 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:54:05 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:54:05 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 05:54:05 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 05:54:05 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 05:54:05 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 05:54:05 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:54:07 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:54:09 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:54:09 | WARNING  | EMCBot.Scanner | Could not find nation Texas - it may not exist on the server
+2025-10-29 05:54:09 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.45s
+2025-10-29 05:57:26 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:57:26 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:57:26 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:57:26 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:57:27 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:57:27 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:57:27 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:57:27 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:57:27 | INFO     | EMCBot | API client initialized
+2025-10-29 05:57:27 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 05:57:27 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 05:57:27 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 05:57:27 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 05:57:27 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 05:57:29 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:57:29 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:57:29 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | Processing nation: 'Cascadia'
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 05:57:29 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 05:57:29 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:57:30 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:57:32 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:57:32 | WARNING  | EMCBot.Scanner | Could not find nation Cascadia - it may not exist on the server
+2025-10-29 05:57:32 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.42s
+2025-10-29 05:59:51 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 05:59:51 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 05:59:51 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 05:59:51 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 05:59:51 | INFO     | EMCBot | Setting up bot...
+2025-10-29 05:59:51 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 05:59:51 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 05:59:51 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 05:59:51 | INFO     | EMCBot | API client initialized
+2025-10-29 05:59:51 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 05:59:51 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 05:59:51 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 05:59:51 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 05:59:52 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 05:59:54 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 05:59:54 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 05:59:54 | INFO     | EMCBot | Bot is ready!
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | Processing nation: 'Cascadia'
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 05:59:54 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 05:59:54 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:59:55 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:59:57 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 05:59:57 | WARNING  | EMCBot.Scanner | Could not find nation Cascadia - it may not exist on the server
+2025-10-29 05:59:57 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.43s
+2025-10-29 06:02:24 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 06:02:24 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 06:02:24 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 06:02:24 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 06:02:25 | INFO     | EMCBot | Setting up bot...
+2025-10-29 06:02:25 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 06:02:25 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 06:02:25 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 06:02:25 | INFO     | EMCBot | API client initialized
+2025-10-29 06:02:25 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 06:02:25 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 06:02:25 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 06:02:25 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 06:02:25 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 06:02:27 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 06:02:27 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 06:02:27 | INFO     | EMCBot | Bot is ready!
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 06:02:27 | ERROR    | EMCBot.Scanner | Invalid nation config: name (type: <class 'str'>)
+2025-10-29 06:02:27 | ERROR    | EMCBot.Scanner | Invalid nation config: uuid (type: <class 'str'>)
+2025-10-29 06:02:27 | ERROR    | EMCBot.Scanner | Invalid nation config: flag_url (type: <class 'str'>)
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 0.00s
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 06:02:27 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 06:05:19 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 06:05:19 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 06:05:19 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 06:05:19 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 06:05:20 | INFO     | EMCBot | Setting up bot...
+2025-10-29 06:05:20 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 06:05:20 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 06:05:20 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 06:05:20 | INFO     | EMCBot | API client initialized
+2025-10-29 06:05:20 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 06:05:20 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 06:05:20 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 06:05:20 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 06:05:20 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 06:05:22 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 06:05:22 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 06:05:22 | INFO     | EMCBot | Bot is ready!
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | Processing nation: 'Cascadia'
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 06:05:22 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 06:05:23 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:05:24 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:05:26 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:05:26 | WARNING  | EMCBot.Scanner | Could not find nation Cascadia - it may not exist on the server
+2025-10-29 06:05:26 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.56s
+2025-10-29 06:09:09 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 06:09:09 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 06:09:09 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 06:09:09 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 06:09:09 | INFO     | EMCBot | Setting up bot...
+2025-10-29 06:09:09 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 06:09:09 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 06:09:09 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 06:09:09 | INFO     | EMCBot | API client initialized
+2025-10-29 06:09:09 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 06:09:09 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 06:09:09 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 06:09:09 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 06:09:09 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 06:09:12 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 06:09:12 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 06:09:12 | INFO     | EMCBot | Bot is ready!
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | Processing nation: 'Cascadia'
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 06:09:12 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 06:09:12 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:09:13 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:09:15 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:09:15 | INFO     | EMCBot.API | Found nation via GET filter: Cascadia
+2025-10-29 06:09:15 | INFO     | EMCBot.Scanner | Nation Cascadia has no towns
+2025-10-29 06:09:15 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.46s
+2025-10-29 06:16:04 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 06:16:04 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 06:16:04 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 06:16:04 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 06:16:04 | INFO     | EMCBot | Setting up bot...
+2025-10-29 06:16:04 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 06:16:04 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 06:16:04 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 06:16:04 | INFO     | EMCBot | API client initialized
+2025-10-29 06:16:04 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 06:16:04 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 06:16:04 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 06:16:04 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 06:16:04 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 06:16:07 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 06:16:07 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 06:16:07 | INFO     | EMCBot | Bot is ready!
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | Processing nation: 'Cascadia'
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 06:16:07 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 06:16:07 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:16:08 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:16:10 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:16:11 | INFO     | EMCBot.API | Found nation via GET filter: Cascadia
+2025-10-29 06:16:11 | INFO     | EMCBot.Scanner | Nation Cascadia has no towns
+2025-10-29 06:16:11 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.81s
+2025-10-29 06:16:53 | INFO     | root | Logging configured - log file: /home/container/discadian/logs/bot.log
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | EMC Verification Bot Starting
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | ==================================================
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Script directory: /home/container/discadian
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Working directory: /home/container/discadian
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Loading config from: /home/container/discadian/config.yaml
+2025-10-29 06:16:53 | INFO     | EMCBot | Loaded configuration from /home/container/discadian/config.yaml
+2025-10-29 06:16:53 | WARNING  | discord.client | PyNaCl is not installed, voice will NOT be supported
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Token type: <class 'str'>
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Token length: 72
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Token starts with: MTM5ODkyMD...
+2025-10-29 06:16:53 | INFO     | EMCBot.Main | Starting bot...
+2025-10-29 06:16:53 | INFO     | EMCBot | Setting up bot...
+2025-10-29 06:16:53 | INFO     | EMCBot.Database | Initializing database at /home/container/discadian/database.db
+2025-10-29 06:16:53 | INFO     | EMCBot.Database | Database schema initialized successfully
+2025-10-29 06:16:53 | INFO     | EMCBot | Database initialized at: /home/container/discadian/database.db
+2025-10-29 06:16:53 | INFO     | EMCBot | API client initialized
+2025-10-29 06:16:53 | INFO     | EMCBot | Loaded cog: cogs.verification
+2025-10-29 06:16:53 | INFO     | EMCBot | Loaded cog: cogs.admin
+2025-10-29 06:16:53 | INFO     | EMCBot | Loaded cog: cogs.auto_verify
+2025-10-29 06:16:53 | INFO     | EMCBot | Loaded cog: cogs.scanner
+2025-10-29 06:16:53 | INFO     | EMCBot | Commands synced to guild 1419917974621519884
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | User scan task started
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | Nation scan task started
+2025-10-29 06:16:56 | INFO     | EMCBot | Logged in as Discadian#4337 (ID: 1398920286208000093)
+2025-10-29 06:16:56 | INFO     | EMCBot | Connected to guild: scio_org's server
+2025-10-29 06:16:56 | INFO     | EMCBot | Bot is ready!
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | Starting user scan...
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | Starting nation scan...
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | Processing nation: 'Cascadia'
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | Scanning 0 verified users
+2025-10-29 06:16:56 | INFO     | EMCBot.Scanner | User scan complete: 0 scanned, 0 changes in 0.00s
+2025-10-29 06:16:56 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:16:57 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:16:59 | ERROR    | EMCBot.API | API error 400: https://api.earthmc.net/v3/aurora/nations - Response: Your query contains a value that is not a string
+2025-10-29 06:16:59 | INFO     | EMCBot.API | Found nation via GET filter: Cascadia
+2025-10-29 06:16:59 | INFO     | EMCBot.Scanner | Nation Cascadia has no towns
+2025-10-29 06:16:59 | INFO     | EMCBot.Scanner | Nation scan complete: 0 towns scanned, 0 changes in 3.79s

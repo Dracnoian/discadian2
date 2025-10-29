@@ -1,0 +1,51 @@
+bot:
+  token: "Token"
+  guild_id: "1419917974621519884"
+
+main_nations:
+  - name: "Cascadia"
+    uuid: "55a440f4-9c2e-4ead-b933-f0337294e63e"
+    flag_url: ""
+
+allied_nations: []
+
+roles:
+  citizen: "1432633508190486530"
+  allied: "1432633560711430214"
+  foreigner: "1432633578587422801"
+  admin: "1432633602297958441"
+
+channels:
+  logging: "1432633157529763923"
+  notifications:
+    government: "1432633173488959539"
+    status: "1432633185031946331"
+    milestones: "1432633197899808798"
+
+admins:
+  user_ids:
+    - "299568950734487552"
+    - "718625255446282303"
+  role_ids: []
+
+blacklist:
+  discord_ids: []
+  minecraft_uuids: []
+
+api:
+  base_url: "https://api.earthmc.net/v3/aurora"
+  rate_limit: 180
+  error_message: "The EarthMC API is currently unavailable. Please try again later."
+
+scan_intervals:
+  users: 10800
+  nations: 10800
+
+thresholds:
+  population: [20, 50, 100, 200]
+  balance: [1000, 5000, 10000, 50000]
+
+logging:
+  level: "INFO"
+  file: "logs/bot.log"
+  console: true
