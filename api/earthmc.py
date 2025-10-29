@@ -119,7 +119,17 @@ class EarthMCAPI:
             logger.debug(f"POST data (raw): {data}")
             logger.debug(f"POST data (JSON): {json_module.dumps(data)}")
         
-        return await self._request('POST', endpoint, json=data, headers={'Content-Type': 'application/json'})
+        response = await self._request('POST', endpoint, json=data, headers={'Content-Type': 'application/json'})
+        
+        # Log response type and sample
+        if response:
+            logger.debug(f"POST response type: {type(response)}")
+            if isinstance(response, dict):
+                logger.debug(f"POST response has {len(response)} keys")
+            elif isinstance(response, list):
+                logger.debug(f"POST response has {len(response)} items")
+        
+        return response
     
     # ========== PLAYER ENDPOINTS ==========
     
@@ -153,10 +163,16 @@ class EarthMCAPI:
         results = []
         for i in range(0, len(uuids), 100):
             batch = uuids[i:i+100]
-            # Send UUIDs directly in query array
+            # Send UUIDs directly in query array (strings, not objects)
             batch_results = await self._post('/players', {'query': batch})
+            
             if batch_results:
-                results.extend(batch_results)
+                # Handle different response formats
+                if isinstance(batch_results, list):
+                    results.extend(batch_results)
+                elif isinstance(batch_results, dict):
+                    logger.debug(f"Players API returned dict with {len(batch_results)} keys")
+                    results.extend(batch_results.values())
         
         return results
     
@@ -164,14 +180,16 @@ class EarthMCAPI:
     
     async def get_town_by_name(self, town_name: str) -> Optional[Dict]:
         """Get town data by name."""
-        result = await self._post('/towns', {'query': [{'name': town_name}]})
+        # Send name directly as string, not as object
+        result = await self._post('/towns', {'query': [town_name]})
         if result and isinstance(result, list) and len(result) > 0:
             return result[0]
         return None
     
     async def get_town_by_uuid(self, uuid: str) -> Optional[Dict]:
         """Get town data by UUID."""
-        result = await self._post('/towns', {'query': [{'uuid': uuid}]})
+        # Send UUID directly as string, not as object
+        result = await self._post('/towns', {'query': [uuid]})
         if result and isinstance(result, list) and len(result) > 0:
             return result[0]
         return None
@@ -184,10 +202,34 @@ class EarthMCAPI:
         results = []
         for i in range(0, len(uuids), 100):
             batch = uuids[i:i+100]
-            queries = [{'uuid': uuid} for uuid in batch]
-            batch_results = await self._post('/towns', {'query': queries})
+            # Send UUIDs directly as strings, not as objects
+            batch_results = await self._post('/towns', {'query': batch})
+            
             if batch_results:
-                results.extend(batch_results)
+                # Detailed logging of response structure
+                logger.info(f"Towns batch response type: {type(batch_results)}")
+                logger.info(f"Towns batch response: {str(batch_results)[:500]}")
+                
+                # Handle different response formats
+                if isinstance(batch_results, list):
+                    # Response is already a list of town objects
+                    logger.info(f"Processing {len(batch_results)} towns from list response")
+                    for idx, item in enumerate(batch_results):
+                        logger.debug(f"Town {idx} type: {type(item)}, value: {str(item)[:100]}")
+                    results.extend(batch_results)
+                elif isinstance(batch_results, dict):
+                    # Response is a dict with UUIDs as keys, extract values
+                    logger.info(f"Processing {len(batch_results)} towns from dict response")
+                    for key, value in list(batch_results.items())[:3]:  # Log first 3
+                        logger.debug(f"Dict key type: {type(key)}, value type: {type(value)}")
+                        logger.debug(f"Key: {key}, Value: {str(value)[:100]}")
+                    results.extend(batch_results.values())
+                else:
+                    logger.error(f"Unexpected towns API response type: {type(batch_results)}")
+        
+        logger.info(f"Returning {len(results)} total towns")
+        if results:
+            logger.info(f"First result type: {type(results[0])}, value: {str(results[0])[:200]}")
         
         return results
     
@@ -219,7 +261,7 @@ class EarthMCAPI:
         logger.debug(f"Querying nation by name: '{nation_name}'")
         
         try:
-            # Correct format: query array contains strings directly
+            # Send name directly as string in query array
             result = await self._post('/nations', {'query': [nation_name]})
             
             if result and isinstance(result, list) and len(result) > 0:
@@ -235,7 +277,8 @@ class EarthMCAPI:
     
     async def get_nation_by_uuid(self, uuid: str) -> Optional[Dict]:
         """Get nation data by UUID."""
-        result = await self._post('/nations', {'query': [{'uuid': uuid}]})
+        # Send UUID directly as string, not as object
+        result = await self._post('/nations', {'query': [uuid]})
         if result and isinstance(result, list) and len(result) > 0:
             return result[0]
         return None
@@ -248,10 +291,16 @@ class EarthMCAPI:
         results = []
         for i in range(0, len(uuids), 100):
             batch = uuids[i:i+100]
-            queries = [{'uuid': uuid} for uuid in batch]
-            batch_results = await self._post('/nations', {'query': queries})
+            # Send UUIDs directly as strings, not as objects
+            batch_results = await self._post('/nations', {'query': batch})
+            
             if batch_results:
-                results.extend(batch_results)
+                # Handle different response formats
+                if isinstance(batch_results, list):
+                    results.extend(batch_results)
+                elif isinstance(batch_results, dict):
+                    logger.debug(f"Nations API returned dict with {len(batch_results)} keys")
+                    results.extend(batch_results.values())
         
         return results
     

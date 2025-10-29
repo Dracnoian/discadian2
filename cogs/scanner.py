@@ -17,6 +17,7 @@ from utils import (
 )
 from utils.roles import update_roles
 from utils.nicknames import set_nickname
+from utils.data_processor import prepare_town_for_cache
 
 logger = logging.getLogger('EMCBot.Scanner')
 
@@ -48,7 +49,7 @@ class ScannerCog(commands.Cog):
         await self.bot.wait_until_ready()
         logger.info("User scan task started")
     
-    @tasks.loop(seconds=10800)  # 3 hours
+    @tasks.loop(seconds=10)  # 3 hours
     async def nation_scan_task(self):
         """Periodic nation scan task."""
         try:
@@ -284,8 +285,23 @@ class ScannerCog(commands.Cog):
                         'name': nation_name
                     })
                     
-                    # Get all towns in nation
-                    town_uuids = nation_data.get('towns', [])
+                    # Get all towns in nation - extract UUIDs from town objects
+                    town_data_list = nation_data.get('towns', [])
+                    
+                    # Extract UUID strings from town objects
+                    # The API may return town objects like {"uuid": "...", "name": "..."}
+                    # or just UUID strings, so we handle both cases
+                    town_uuids = []
+                    for town in town_data_list:
+                        if isinstance(town, dict):
+                            # Town is an object with uuid field
+                            uuid = town.get('uuid')
+                            if uuid:
+                                town_uuids.append(uuid)
+                        elif isinstance(town, str):
+                            # Town is already a UUID string
+                            town_uuids.append(town)
+                    
                     towns_scanned += len(town_uuids)
                     
                     if not town_uuids:
@@ -294,7 +310,7 @@ class ScannerCog(commands.Cog):
                     
                     logger.debug(f"Querying {len(town_uuids)} towns for {nation_name}")
                     
-                    # Batch query all towns
+                    # Batch query all towns - now with proper UUID strings
                     current_towns = await self.bot.api.get_towns_by_uuids(town_uuids)
                     
                     if not current_towns:
@@ -304,9 +320,17 @@ class ScannerCog(commands.Cog):
                     # Check each town for changes
                     for town_data in current_towns:
                         try:
+                            # Defensive check: ensure town_data is a dict
+                            if not isinstance(town_data, dict):
+                                logger.error(f"Town data is not a dict! Type: {type(town_data)}, Value: {str(town_data)[:200]}")
+                                continue
+                            
                             town_uuid = town_data.get('uuid')
                             if not town_uuid:
+                                logger.warning(f"Town data has no uuid: {str(town_data)[:200]}")
                                 continue
+                            
+                            town_name = town_data.get('name', 'unknown')
                             
                             # Get cached town data
                             cached = await self.bot.db.get_town_cache(town_uuid)
@@ -318,10 +342,13 @@ class ScannerCog(commands.Cog):
                                 changes_detected += 1
                                 await self._send_notifications(town_data, changes)
                             
-                            # Update cache
-                            await self.bot.db.upsert_town_cache(town_data)
+                            # Update cache - use data processor to format correctly
+                            processed_town_data = prepare_town_for_cache(town_data)
+                            await self.bot.db.upsert_town_cache(processed_town_data)
                         except Exception as e:
-                            logger.error(f"Error processing town {town_data.get('name', 'unknown')}: {e}")
+                            town_name = town_data.get('name', 'unknown') if isinstance(town_data, dict) else str(town_data)[:50]
+                            logger.error(f"Error processing town {town_name}: {e}")
+                            logger.error(f"Town data type: {type(town_data)}, value: {str(town_data)[:200]}")
                             continue
                     
                 except Exception as e:
@@ -353,31 +380,92 @@ class ScannerCog(commands.Cog):
         changes = {}
         
         # Government changes
-        if cached.get('mayor_uuid') != current.get('mayor', {}).get('uuid'):
+        current_mayor = current.get('mayor', {})
+        current_mayor_uuid = current_mayor.get('uuid') if isinstance(current_mayor, dict) else None
+        
+        if cached.get('mayor_uuid') != current_mayor_uuid:
             changes['mayor'] = (
                 cached.get('mayor_uuid'),
-                current.get('mayor', {}).get('uuid')
+                current_mayor_uuid
             )
         
-        # Board changes
-        cached_board = cached.get('board', [])
-        current_board = [m['uuid'] for m in current.get('board', [])]
-        board_diff = compare_lists(cached_board, current_board)
-        
-        if board_diff['added']:
-            changes['board_added'] = board_diff['added']
-        if board_diff['removed']:
-            changes['board_removed'] = board_diff['removed']
+        # Board changes - Note: 'board' in API is a string (town motto/message)
+        # Actual board members might be in a different field or not provided
+        # Skip board member tracking for now as API structure differs from expected
         
         # Resident changes
         cached_residents = cached.get('residents', [])
-        current_residents = [r['uuid'] for r in current.get('residents', [])]
-        resident_diff = compare_lists(cached_residents, current_residents)
         
-        if resident_diff['added']:
-            changes['residents_added'] = resident_diff['added']
-        if resident_diff['removed']:
-            changes['residents_removed'] = resident_diff['removed']
+        # Handle different cached formats safely
+        if isinstance(cached_residents, str):
+            # Cached data is a JSON string, parse it
+            import json
+            
+            # Check if empty, whitespace, or None
+            if not cached_residents or not cached_residents.strip():
+                cached_residents = []
+            else:
+                try:
+                    cached_residents = json.loads(cached_residents)
+                except (json.JSONDecodeError, ValueError) as e:
+                    logger.warning(f"Failed to parse cached residents JSON: {e}")
+                    logger.debug(f"Cached residents value: '{cached_residents}'")
+                    cached_residents = []
+        elif cached_residents is None:
+            cached_residents = []
+        
+        # Ensure cached_residents is a list
+        if not isinstance(cached_residents, list):
+            logger.warning(f"Cached residents not a list: {type(cached_residents)}")
+            cached_residents = []
+        
+        # MIGRATION: Handle old cached format where residents were full objects
+        # Extract UUIDs from old format if needed
+        migrated_cached = []
+        for item in cached_residents:
+            if isinstance(item, dict):
+                # Old format: full resident object
+                uuid = item.get('uuid')
+                if uuid and isinstance(uuid, str):
+                    migrated_cached.append(uuid)
+            elif isinstance(item, str):
+                # New format: UUID string
+                migrated_cached.append(item)
+        cached_residents = migrated_cached
+        
+        # Extract resident UUIDs from current data
+        current_residents_data = current.get('residents', [])
+        current_residents = []
+        
+        if isinstance(current_residents_data, list):
+            for r in current_residents_data:
+                if isinstance(r, dict):
+                    uuid = r.get('uuid')
+                    if uuid and isinstance(uuid, str):
+                        current_residents.append(uuid)
+                elif isinstance(r, str):
+                    current_residents.append(r)
+        
+        # Final defensive check: ensure all items are strings
+        cached_residents = [str(x) for x in cached_residents if x]
+        current_residents = [str(x) for x in current_residents if x]
+        
+        try:
+            resident_diff = compare_lists(cached_residents, current_residents)
+            
+            if resident_diff['added']:
+                changes['residents_added'] = resident_diff['added']
+            if resident_diff['removed']:
+                changes['residents_removed'] = resident_diff['removed']
+        except TypeError as e:
+            if 'unhashable' in str(e):
+                logger.error(f"Unhashable type error in residents comparison")
+                logger.error(f"Cached residents types: {[type(x).__name__ for x in cached_residents[:5]]}")
+                logger.error(f"Current residents types: {[type(x).__name__ for x in current_residents[:5]]}")
+            else:
+                raise
+        except Exception as e:
+            logger.error(f"Error comparing residents: {e}")
         
         # Status changes
         status = current.get('status', {})

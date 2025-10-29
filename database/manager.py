@@ -262,18 +262,18 @@ class DatabaseManager:
             params = (
                 town_data.get('uuid'),
                 town_data.get('name'),
-                town_data.get('nation', {}).get('uuid') if town_data.get('nation') else None,
-                town_data.get('mayor', {}).get('uuid') if town_data.get('mayor') else None,
-                json.dumps(town_data.get('board', [])),
-                json.dumps(town_data.get('residents', [])),
-                town_data.get('status', {}).get('isPublic'),
-                town_data.get('status', {}).get('isOpen'),
-                town_data.get('status', {}).get('isOverClaimed'),
-                town_data.get('status', {}).get('isForSale'),
-                town_data.get('status', {}).get('hasOverclaimShield'),
-                town_data.get('stats', {}).get('numTownBlocks'),
-                town_data.get('stats', {}).get('numResidents'),
-                town_data.get('stats', {}).get('balance')
+                town_data.get('nation_uuid'),  # ← Already extracted
+                town_data.get('mayor_uuid'),  # ← Already extracted
+                town_data.get('board'),  # ← Already a string (not JSON)
+                town_data.get('residents'),  # ← Already JSON string of UUIDs
+                town_data.get('is_public'),  # ← Already extracted
+                town_data.get('is_open'),
+                town_data.get('is_overclaimed'),
+                town_data.get('is_for_sale'),
+                town_data.get('has_overclaim_shield'),
+                town_data.get('num_town_blocks'),
+                town_data.get('num_residents'),
+                town_data.get('balance')
             )
             await self._execute(query, params)
             return True

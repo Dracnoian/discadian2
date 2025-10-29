@@ -1,5 +1,5 @@
 bot:
-  token: "Token"
+  token: "MTM5ODkyMDI4NjIwODAwMDA5Mw.G6N5Dv.GOMumrzyHtm1vrFeAU0JVBUhX6BxSqKaBoO1H8"
   guild_id: "1419917974621519884"
 
 main_nations:
@@ -39,7 +39,7 @@ api:
 
 scan_intervals:
   users: 10800
-  nations: 10800
+  nations: 5
 
 thresholds:
   population: [20, 50, 100, 200]
