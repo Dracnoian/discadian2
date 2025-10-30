@@ -281,15 +281,46 @@ class DatabaseManager:
             logger.error(f"Error upserting town cache: {e}")
             return False
     
+    def _parse_residents_json(self, residents_str: str, town_uuid: str = "unknown") -> list:
+        """Safely parse residents JSON string.
+        
+        Args:
+            residents_str: JSON string of resident UUIDs
+            town_uuid: Town UUID for logging
+            
+        Returns:
+            List of resident UUIDs
+        """
+        if not residents_str:
+            return []
+        
+        # Handle whitespace-only strings
+        if not residents_str.strip():
+            return []
+        
+        try:
+            parsed = json.loads(residents_str)
+            # Ensure it's a list
+            if not isinstance(parsed, list):
+                logger.warning(f"Residents data for town {town_uuid} is not a list: {type(parsed)}")
+                return []
+            return parsed
+        except (json.JSONDecodeError, ValueError) as e:
+            logger.warning(f"Failed to parse residents JSON for town {town_uuid}: {e}")
+            logger.debug(f"Residents value: '{residents_str[:100]}'")
+            return []
+    
     async def get_town_cache(self, town_uuid: str) -> Optional[dict]:
         """Get cached town data."""
         result = await self._fetchone("SELECT * FROM town_cache WHERE town_uuid = ?", (town_uuid,))
         if result:
             # Parse JSON fields
-            if result.get('board'):
-                result['board'] = json.loads(result['board'])
+            # IMPORTANT: 'board' is a plain string (town motto), NOT JSON
+            # Only 'residents' needs JSON parsing (it's a JSON array of UUID strings)
             if result.get('residents'):
-                result['residents'] = json.loads(result['residents'])
+                result['residents'] = self._parse_residents_json(result['residents'], town_uuid)
+            else:
+                result['residents'] = []
         return result
     
     async def get_towns_by_nation_cache(self, nation_uuid: str) -> List[dict]:
@@ -300,10 +331,13 @@ class DatabaseManager:
         )
         # Parse JSON fields for each result
         for result in results:
-            if result.get('board'):
-                result['board'] = json.loads(result['board'])
+            town_uuid = result.get('town_uuid', 'unknown')
+            # 'board' is a plain string, don't parse it
+            # Only parse 'residents' as JSON
             if result.get('residents'):
-                result['residents'] = json.loads(result['residents'])
+                result['residents'] = self._parse_residents_json(result['residents'], town_uuid)
+            else:
+                result['residents'] = []
         return results
     
     async def get_all_town_caches(self) -> List[dict]:
@@ -311,10 +345,13 @@ class DatabaseManager:
         results = await self._fetchall("SELECT * FROM town_cache")
         # Parse JSON fields for each result
         for result in results:
-            if result.get('board'):
-                result['board'] = json.loads(result['board'])
+            town_uuid = result.get('town_uuid', 'unknown')
+            # 'board' is a plain string, don't parse it
+            # Only parse 'residents' as JSON
             if result.get('residents'):
-                result['residents'] = json.loads(result['residents'])
+                result['residents'] = self._parse_residents_json(result['residents'], town_uuid)
+            else:
+                result['residents'] = []
         return results
     
     async def delete_town_cache(self, town_uuid: str) -> bool:
@@ -368,7 +405,10 @@ class DatabaseManager:
         # Parse JSON details
         for result in results:
             if result.get('details'):
-                result['details'] = json.loads(result['details'])
+                try:
+                    result['details'] = json.loads(result['details'])
+                except (json.JSONDecodeError, ValueError):
+                    result['details'] = {}
         return results
     
     async def get_user_audit_logs(self, discord_id: str, limit: int = 50) -> List[dict]:
@@ -384,5 +424,8 @@ class DatabaseManager:
         # Parse JSON details
         for result in results:
             if result.get('details'):
-                result['details'] = json.loads(result['details'])
+                try:
+                    result['details'] = json.loads(result['details'])
+                except (json.JSONDecodeError, ValueError):
+                    result['details'] = {}
         return results

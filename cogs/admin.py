@@ -48,6 +48,138 @@ class AdminCog(commands.Cog):
             return interaction.client.is_admin(interaction.user.id)
         return app_commands.check(predicate)
     
+    # ========== TEXT COMMANDS (for when slash commands aren't working) ==========
+    
+    @commands.command(name="sync")
+    async def sync_commands(self, ctx: commands.Context, scope: str = "guild"):
+        """Sync slash commands to Discord (Text command for admins).
+        
+        Usage:
+            !sync - Sync to current guild only (fast, ~10 seconds)
+            !sync global - Sync globally to all guilds (slow, ~1 hour)
+            !sync clear - Clear guild commands
+        
+        Args:
+            scope: 'guild' (default), 'global', or 'clear'
+        """
+        # Check if user is admin
+        if not self.bot.is_admin(ctx.author.id):
+            await ctx.send("❌ You must be an admin to use this command.")
+            return
+        
+        try:
+            if scope == "clear":
+                # Clear guild commands
+                self.bot.tree.clear_commands(guild=ctx.guild)
+                await self.bot.tree.sync(guild=ctx.guild)
+                await ctx.send("✅ Cleared all slash commands from this guild.")
+                return
+            
+            elif scope == "global":
+                # Global sync (takes ~1 hour to propagate)
+                await ctx.send("🔄 Syncing commands globally... (This takes ~1 hour to propagate)")
+                synced = await self.bot.tree.sync()
+                await ctx.send(f"✅ Synced {len(synced)} commands globally.\n⏰ Wait up to 1 hour for changes to appear.")
+                
+                # List synced commands
+                if synced:
+                    cmd_list = "\n".join([f"  • /{cmd.name}" for cmd in synced])
+                    await ctx.send(f"**Synced commands:**\n{cmd_list}")
+            
+            else:
+                # Guild sync (fast, ~10 seconds)
+                await ctx.send("🔄 Syncing commands to this guild...")
+                
+                # Copy global commands to guild and sync
+                guild_obj = discord.Object(id=ctx.guild.id)
+                self.bot.tree.copy_global_to(guild=guild_obj)
+                synced = await self.bot.tree.sync(guild=guild_obj)
+                
+                await ctx.send(f"✅ Synced {len(synced)} commands to **{ctx.guild.name}**\n⏰ Wait 5-10 minutes and restart Discord (Ctrl+R).")
+                
+                # List synced commands
+                if synced:
+                    cmd_list = "\n".join([f"  • /{cmd.name}" for cmd in synced])
+                    await ctx.send(f"**Synced commands:**\n{cmd_list}")
+                else:
+                    await ctx.send("⚠️ No commands were synced. Check that cogs are loaded correctly.")
+            
+            logger.info(f"Commands synced by {ctx.author} (scope: {scope})")
+            
+        except Exception as e:
+            logger.error(f"Error syncing commands: {e}", exc_info=True)
+            await ctx.send(f"❌ Error syncing commands: {e}")
+    
+    @commands.command(name="listcogs")
+    async def list_cogs(self, ctx: commands.Context):
+        """List all loaded cogs and their commands (Text command for admins)."""
+        # Check if user is admin
+        if not self.bot.is_admin(ctx.author.id):
+            await ctx.send("❌ You must be an admin to use this command.")
+            return
+        
+        embed = discord.Embed(
+            title="📦 Loaded Cogs & Commands",
+            color=discord.Color.blue()
+        )
+        
+        # List cogs
+        cogs = list(self.bot.cogs.keys())
+        embed.add_field(
+            name=f"Loaded Cogs ({len(cogs)})",
+            value="\n".join([f"  • {cog}" for cog in cogs]) if cogs else "None",
+            inline=False
+        )
+        
+        # List slash commands
+        slash_commands = self.bot.tree.get_commands()
+        if slash_commands:
+            cmd_list = "\n".join([f"  • /{cmd.name} - {cmd.description}" for cmd in slash_commands])
+            embed.add_field(
+                name=f"Slash Commands ({len(slash_commands)})",
+                value=cmd_list,
+                inline=False
+            )
+        else:
+            embed.add_field(
+                name="Slash Commands",
+                value="⚠️ No slash commands registered",
+                inline=False
+            )
+        
+        # List text commands
+        text_commands = [cmd for cmd in self.bot.commands if not cmd.hidden]
+        if text_commands:
+            cmd_list = "\n".join([f"  • !{cmd.name}" for cmd in text_commands])
+            embed.add_field(
+                name=f"Text Commands ({len(text_commands)})",
+                value=cmd_list,
+                inline=False
+            )
+        
+        await ctx.send(embed=embed)
+    
+    @commands.command(name="reloadcog")
+    async def reload_cog(self, ctx: commands.Context, cog_name: str):
+        """Reload a specific cog (Text command for admins).
+        
+        Usage: !reloadcog cogs.admin
+        """
+        # Check if user is admin
+        if not self.bot.is_admin(ctx.author.id):
+            await ctx.send("❌ You must be an admin to use this command.")
+            return
+        
+        try:
+            await self.bot.reload_extension(cog_name)
+            await ctx.send(f"✅ Reloaded cog: {cog_name}")
+            logger.info(f"Cog {cog_name} reloaded by {ctx.author}")
+        except Exception as e:
+            await ctx.send(f"❌ Error reloading cog: {e}")
+            logger.error(f"Error reloading cog {cog_name}: {e}", exc_info=True)
+    
+    # ========== SLASH COMMANDS ==========
+    
     @app_commands.command(name="purge", description="Remove a user's verification")
     @is_admin_check()
     @app_commands.describe(
@@ -175,7 +307,7 @@ class AdminCog(commands.Cog):
         await interaction.response.defer(thinking=True)
         
         try:
-            config_path = "./discadian/config.yaml"
+            config_path = "./config.yaml"
             
             if action == "list":
                 # Show current blacklist
